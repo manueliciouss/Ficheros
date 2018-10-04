@@ -29,7 +29,7 @@ public class BancoDatos {
         try{
             
             FileReader input = new FileReader(FILE_NAME);
-            int c = input.read();
+            int c=0;// = input.read();
             String str = "";
             
             while (c != -1) {
@@ -37,6 +37,7 @@ public class BancoDatos {
                 char lol = (char)c;
                 str += lol;
             }
+            str = str.substring(0, str.length()-1);
             System.out.println(str);
             input.close();
             
@@ -65,7 +66,7 @@ public class BancoDatos {
         String str = "";
         for(int i = 0; i < cantidad; i++){
             int c = ((int)(Math.random() * 9) + 1);
-            str += (char)c;
+            str += c;
         }
         return str;
     }
